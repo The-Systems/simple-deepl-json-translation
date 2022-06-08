@@ -1,8 +1,8 @@
 <?php
 
 $fileToTranslate = json_decode(file_get_contents(__DIR__.'/fileToTranslate.json'), true);
-$langToTranslate = "ES";
-$deepl_apiKey = 'a569ef4e-a232-4b23-d666-b4e0ef3b0021:fx&';
+$langToTranslate = "RU";
+$deepl_apiKey = '4e1e7179-4363-60ab-6c0e-343c617374ae:fx';
 
 $curl = curl_init();
 $translation = [];
@@ -42,5 +42,5 @@ foreach ($fileToTranslate as $key => $value) {
 echo PHP_EOL."DONE".PHP_EOL;
 unlink(__DIR__.'/translatesFile.json');
 $file = fopen(__DIR__.'/translatesFile.json', "w");
-fwrite($file, json_encode($translation, JSON_PRETTY_PRINT));
+fwrite($file, json_encode($translation, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 fclose($file);
