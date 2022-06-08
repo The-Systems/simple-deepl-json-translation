@@ -1,0 +1,1 @@
+# simple-deepl-json-translation
