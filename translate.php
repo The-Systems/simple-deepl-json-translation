@@ -39,7 +39,7 @@ foreach ($fileToTranslate as $key => $value) {
   $translation[$key] = $array['translations'][0]['text'];
   echo $i."/".$translationCount. " - ".round(($i/$translationCount*100), 1)."% (Done)".PHP_EOL;
 }
-echo PHP_EQL."DONE".PHP_EOL;
+echo PHP_EOL."DONE".PHP_EOL;
 unlink(__DIR__.'/translatesFile.json');
 $file = fopen(__DIR__.'/translatesFile.json', "w");
 fwrite($file, json_encode($translation, JSON_PRETTY_PRINT));
